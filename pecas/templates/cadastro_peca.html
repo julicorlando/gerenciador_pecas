@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block 'Título' %} Cadastro de Peças {% endblock %}
+{% block 'material' %}
+    <h1>Cadastro de Peça</h1>
+    <form class="formulario" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+        <button class="resetar"  type="reset">Limpar</button>
+    </form>
+{% endblock %}

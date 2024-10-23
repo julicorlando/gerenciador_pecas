@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block 'Título' %} Lista de Peças {% endblock %}
+{% block 'material' %}
+    <h1>Retirada de Peça</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Retirar</button>
+        <button type="reset">Limpar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block 'Título' %} Lista de Peças {% endblock %}
+{% block 'material' %}
+    <h1>Lista de Peças</h1>
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Valor de Compra</th>
+                <th>Valor de Venda</th>
+                <th>Quantidade em Estoque</th>
+                <th>Localização</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lista_peca in lista_pecas %}
+            <tr>
+                <td>{{ lista_peca.id }}</td>
+                <td>{{ lista_peca.nome }}</td>
+                <td>{{ lista_peca.valor_compra }}</td>
+                <td>{{ lista_peca.valor_venda }}</td>
+                <td>{{ lista_peca.quantidade_estoque }}</td>
+                <td>{{ lista_peca.localizacao }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
