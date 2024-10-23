@@ -20,7 +20,7 @@ def cadastro_peca(request):
     return render(request, 'cadastro_peca.html', {'form': form})
 
 #@login_required
-def retirada_peca(request):
+#def retirada_peca(request):
     Peca = get_object_or_404(Peca)
     if request.method == 'POST':
         form = RetiradaForm(request.POST, request.FILES)
@@ -33,8 +33,25 @@ def retirada_peca(request):
         return redirect('lista_peca')
     else:
         form = RetiradaForm()
-    return render(request, 'retirada_peca.html',{'form': form})
+#    return render(request, 'retirada_peca.html',{'form': form})
 
+def retirada_peca(request, produto_id):
+    produto = get_object_or_404(produto, id=produto_id)
+    if request.method == 'POST':
+        form = RetiradaForm(request.POST)
+        if form.is_valid():
+            movimentacao = form.save(commit=False)
+            movimentacao.produto = produto
+            if movimentacao.tipo == 'ENTRADA':
+                produto.quantidade += movimentacao.quantidade
+            elif movimentacao.tipo == 'SAIDA' and produto.quantidade >= movimentacao.quantidade:
+                produto.quantidade -= movimentacao.quantidade
+            produto.save()
+            movimentacao.save()
+            return redirect('lista_peca')
+    else:
+        form = RetiradaForm()
+    return render(request, 'Retirada_peca.html', {'produto': produto,'form':form})
 
 def login_view(request):
     if request.method == 'POST':
