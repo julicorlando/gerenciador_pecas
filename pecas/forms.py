@@ -4,7 +4,7 @@ from .models import Peca, Retirada
 class PecaForm(forms.ModelForm):
     class Meta:
         model = Peca
-        fields = ['nome', 'quantidade_estoque', 'local_armazenamento']
+        fields = ['nome', 'codigo_barras', 'quantidade_estoque', 'local_armazenamento']
 
 class RetiradaForm(forms.ModelForm):
     class Meta:

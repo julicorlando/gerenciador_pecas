@@ -22,7 +22,7 @@ from pecas import views
 urlpatterns = [
     path('', views.home, name='home'),  # Página inicial
     path('cadastro_peca/', views.cadastro_peca, name='cadastro_peca'),  # Cadastro de peça
-    path('retirada_peca/', views.retirada_peca, name='retirada_peca'),  # Retirada de peça
+#path('retirada_peca/', views.retirada_peca, name='retirada_peca'),  # Retirada de peça
     path('retirada_peca/<int:pecas_id>', views.retirada_peca, name='retirada_peca'), #Retirada de peça
     path('login/', views.login_view, name='login'),  # Página de login
     path('home', views.home, name='home'), #Pagina inicial

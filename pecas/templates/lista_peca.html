@@ -7,8 +7,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Valor de Compra</th>
-                <th>Valor de Venda</th>
+                <th>Código de barras</th>
                 <th>Quantidade em Estoque</th>
                 <th>Localização</th>
             </tr>
@@ -18,10 +17,9 @@
             <tr>
                 <td>{{ lista_peca.id }}</td>
                 <td>{{ lista_peca.nome }}</td>
-                <td>{{ lista_peca.valor_compra }}</td>
-                <td>{{ lista_peca.valor_venda }}</td>
+                <td>{{ lista_peca.codigo_barras }}</td>
                 <td>{{ lista_peca.quantidade_estoque }}</td>
-                <td>{{ lista_peca.localizacao }}</td>
+                <td>{{ lista_peca.local_armazenamento }}</td>
             </tr>
             {% endfor %}
         </tbody>

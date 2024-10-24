@@ -19,8 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
-                ('valor_compra', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('valor_venda', models.DecimalField(decimal_places=2, max_digits=10)),
+                ('codigo_barras', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('quantidade_estoque', models.PositiveIntegerField()),
                 ('local_armazenamento', models.CharField(max_length=100)),
             ],
@@ -30,7 +29,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('quantidade', models.PositiveIntegerField()),
-                ('valor_vendido', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('data_retirada', models.DateTimeField(auto_now_add=True)),
                 ('peca', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pecas.peca')),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
