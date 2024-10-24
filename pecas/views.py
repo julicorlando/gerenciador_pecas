@@ -51,7 +51,7 @@ def retirada_peca(request, produto_id):
             return redirect('lista_peca')
     else:
         form = RetiradaForm()
-    return render(request, 'Retirada_peca.html', {'produto': produto,'form':form})
+    return render(request, 'retirada_peca.html', {'produto': produto,'form':form})
 
 def login_view(request):
     if request.method == 'POST':

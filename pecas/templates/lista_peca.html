@@ -20,6 +20,8 @@
                 <td>{{ lista_peca.codigo_barras }}</td>
                 <td>{{ lista_peca.quantidade_estoque }}</td>
                 <td>{{ lista_peca.local_armazenamento }}</td>
+                <td>{{ lista_peca.retirada_peca}}</td>
+                <td>{% csrf_token %}</td>
             </tr>
             {% endfor %}
         </tbody>
